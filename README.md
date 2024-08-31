@@ -15,10 +15,10 @@
 ## Установка и тесты
 
 1. Клонируйте репозиторий, установите зависимотси и запускайте:
-   git clone https://github.com/AnZoro1/ToDo.git
-   cd ToDo
-   npm install
-   npm start
+ git clone https://github.com/AnZoro1/ToDo.git
+cd ToDo
+npm install
+npm start
 
 2. Тесты:
    npm run test:cov
