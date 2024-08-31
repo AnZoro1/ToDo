@@ -1,0 +1,26 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // "outDir": "./dist/",
+    // "sourceMap": true,
+    // "noImplicitAny": true,
+    // "module": "commonjs",
+    // "target": "es6",
+    "jsx": "react-jsx",
+    "types": [
+      "vite/client",
+      "node",
+      "jest"
+    ],
+  },
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+}

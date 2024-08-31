@@ -1,0 +1,32 @@
+.mainConteiner {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 5px;
+
+    input {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        margin-right: 0px;
+        outline: none;
+        border: none;
+        padding-left: 10px;
+        width: 100%;
+    }
+
+    .updateTodo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #ff0000;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .updateTodo:hover {
+        background-color: #510000;
+    }
+}

@@ -1,0 +1,179 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    height: 100vh;
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 5px;
+
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgb(202, 159, 245);
+        border-radius: 15px;
+
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(152, 53, 252);
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 600px;
+        height: 80vh;
+        background-color: #5c78c4;
+        border-radius: 20px;
+        padding: 40px 0px 40px 0px;
+
+        .formTodoContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            .formContainer {
+                form {
+                    display: flex;
+                    align-items: center;
+
+                    .inputAddTodo {
+                        width: 400px;
+                        height: 40px;
+                        border-top-left-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                        padding-left: 10px;
+                        border: none;
+                        outline: none;
+                    }
+
+
+                    .addTodo {
+                        width: 60px;
+                        height: 43px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #002897;
+                        color: #fff;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        cursor: pointer;
+                    }
+
+                    .addTodo:hover {
+                        background-color: #0145ff;
+                    }
+                }
+            }
+
+            .todoContainer {
+                height: 60vh;
+                overflow-y: scroll;
+                width: 100%;
+
+            }
+        }
+
+
+        .completedAll {
+            width: 100%;
+        }
+
+
+        .footerContainer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 5px;
+            height: 60px;
+            width: 100%;
+            background-color: #002897;
+            color: #FFF;
+
+
+
+
+            .completedTodo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                max-width: 200px;
+            }
+
+
+            .buttonsContainer {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                max-width: 400px;
+
+                .allButton {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                }
+
+                .activeButton {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                }
+
+                .completedButton {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                }
+
+                .allButton:hover,
+                .activeButton:hover,
+                .completedButton:hover {
+                    background-color: rgb(245, 225, 225);
+                    color: #002897;
+                }
+            }
+
+            .clearCompleted {
+                width: 100%;
+                max-width: 200px;
+                display: flex;
+                justify-content: center;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .clearCompleted:hover {
+                background-color: rgb(245, 225, 225);
+                color: #002897;
+            }
+
+
+        }
+
+    }
+}
