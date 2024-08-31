@@ -23,10 +23,4 @@
 2. Тесты:
    npm run test:cov
 
-## Технологии
-   Vite,Ts,React
-
-
-
-
 
