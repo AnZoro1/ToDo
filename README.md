@@ -14,10 +14,10 @@
 
 ## Установка и тесты
 
-1. Клонируйте репозиторий, установите зависимотси и запускайте:
- git clone https://github.com/AnZoro1/ToDo.git
-cd ToDo
-npm install
+1. Клонируйте репозиторий, установите зависимотси и запускайте:<br>
+ git clone https://github.com/AnZoro1/ToDo.git<br>
+cd ToDo<br>
+npm install<br>
 npm start
 
 2. Тесты:
