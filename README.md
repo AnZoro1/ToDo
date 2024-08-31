@@ -1,31 +1,26 @@
-# React + TypeScript + Vite
+# Todo List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+Это приложение Todo List, созданное с использованием Vite, TypeScript и React. Оно предоставляет полный набор CRUD-операций для управления задачами.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Возможности приложения
 
-## Expanding the ESLint configuration
+- **Добавление задач**: Создайте новые задачи и добавьте их в список.
+- **Обновление задач**: Изменяйте существующие задачи.
+- **Удаление задач**: Удаляйте задачи из списка.
+- **Отметка задач как выполненных**: Устанавливайте флажок для выполнения задач.
+- **Фильтрация задач**: Фильтруйте задачи по статусу (все, активные, выполненные).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Установка и тесты
 
-- Configure the top-level `parserOptions` property like this:
+1. Клонируйте репозиторий, установите зависимости и запускайте:<br>
+ git clone https://github.com/AnZoro1/ToDo.git<br>
+cd ToDo<br>
+npm install<br>
+npm start
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. Тесты:
+   npm run test:cov
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# ToDo
+
