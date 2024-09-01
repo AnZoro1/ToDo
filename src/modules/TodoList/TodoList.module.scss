@@ -5,21 +5,25 @@
     font-family: "New Amsterdam", sans-serif;
     font-weight: 400;
     height: 100vh;
+    padding: 10px; // Добавлено для отступов на малых экранах
 
     ::-webkit-scrollbar {
         width: 10px;
         height: 5px;
-
     }
 
     ::-webkit-scrollbar-thumb {
         background: rgb(202, 159, 245);
         border-radius: 15px;
-
     }
 
     ::-webkit-scrollbar-thumb:hover {
         background: rgb(152, 53, 252);
+    }
+
+    @media (max-width: 768px) {
+        height: auto;
+        padding: 20px;
     }
 
     .content {
@@ -32,6 +36,12 @@
         background-color: #5c78c4;
         border-radius: 20px;
         padding: 40px 0px 40px 0px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+            padding: 20px;
+        }
 
         .formTodoContainer {
             display: flex;
@@ -52,8 +62,15 @@
                         padding-left: 10px;
                         border: none;
                         outline: none;
-                    }
 
+                        @media (max-width: 768px) {
+                            width: 60%;
+                        }
+
+                        @media (max-width: 480px) {
+                            width: 100%;
+                        }
+                    }
 
                     .addTodo {
                         width: 60px;
@@ -66,6 +83,10 @@
                         border-top-right-radius: 5px;
                         border-bottom-right-radius: 5px;
                         cursor: pointer;
+
+                        @media (max-width: 480px) {
+                            width: 30%;
+                        }
                     }
 
                     .addTodo:hover {
@@ -79,14 +100,16 @@
                 overflow-y: scroll;
                 width: 100%;
 
+                @media (max-width: 768px) {
+                    height: auto;
+                    max-height: 50vh;
+                }
             }
         }
-
 
         .completedAll {
             width: 100%;
         }
-
 
         .footerContainer {
             display: flex;
@@ -98,8 +121,11 @@
             background-color: #002897;
             color: #FFF;
 
-
-
+            @media (max-width: 480px) {
+                flex-direction: column;
+                gap: 10px;
+                height: auto;
+            }
 
             .completedTodo {
                 display: flex;
@@ -109,7 +135,6 @@
                 width: 100%;
                 max-width: 200px;
             }
-
 
             .buttonsContainer {
                 display: flex;
@@ -126,6 +151,10 @@
                     border-radius: 5px;
                     cursor: pointer;
 
+                    @media (max-width: 480px) {
+                        width: auto;
+                        padding: 5px 10px;
+                    }
                 }
 
                 .activeButton {
@@ -137,6 +166,10 @@
                     border-radius: 5px;
                     cursor: pointer;
 
+                    @media (max-width: 480px) {
+                        width: auto;
+                        padding: 5px 10px;
+                    }
                 }
 
                 .completedButton {
@@ -148,6 +181,10 @@
                     border-radius: 5px;
                     cursor: pointer;
 
+                    @media (max-width: 480px) {
+                        width: auto;
+                        padding: 5px 10px;
+                    }
                 }
 
                 .allButton:hover,
@@ -171,9 +208,6 @@
                 background-color: rgb(245, 225, 225);
                 color: #002897;
             }
-
-
         }
-
     }
 }
