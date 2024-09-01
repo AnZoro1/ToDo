@@ -28,7 +28,7 @@ const UpdatedTodo: React.FC<todoI> = ({ todo, id, setTodos, setMutation }) => {
 
 
     return (
-        <div className={styles.mainConteiner}>
+        <div className={styles.mainContainer}>
             <input
                 type="text"
                 value={mutationTodo}

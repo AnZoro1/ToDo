@@ -6,12 +6,8 @@
     border-radius: 5px;
     margin-bottom: 5px;
     color: #FFF;
-    padding: 10px; // Добавлено для улучшения внешнего вида на малых экранах
+    padding: 10px;
 
-    @media (max-width: 480px) {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
     .todoContainer {
         display: flex;
@@ -31,7 +27,7 @@
             cursor: pointer;
             user-select: none;
             position: relative;
-            padding-left: 35px; // Отступ для кастомного чекбокса
+            padding-left: 35px;
 
             .todo {
                 margin-top: 7px;
