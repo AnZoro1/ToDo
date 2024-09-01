@@ -96,7 +96,7 @@ const TodoList: React.FC = () => {
                                 value={newTodo}
                                 onChange={handleInputChange}
                                 onKeyDown={handleKeyDown}
-                                placeholder='Add todo...'
+                                placeholder='Add Motodo...'
                             />
                             <div className={styles.addTodo} onClick={handleAddTodo}>ADD TODO</div>
                         </form>
