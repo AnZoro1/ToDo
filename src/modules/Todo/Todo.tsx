@@ -43,4 +43,4 @@ const Todo: React.FC<todoI> = ({ todo, id, isСompleted, onChangeTodo, removeTod
     );
 };
 
-export default Todo;
+export default React.memo(Todo);

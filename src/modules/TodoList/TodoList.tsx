@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, KeyboardEvent, useEffect } from 'react';
+import React, { useState, ChangeEvent, KeyboardEvent, useEffect, useCallback, useMemo } from 'react';
 import Todo from '../Todo/Todo';
 import { todoI } from '../interfaces/todoI';
 import styles from './TodoList.module.scss'
@@ -12,19 +12,12 @@ const TodoList: React.FC = () => {
     const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
     const [isAllCompleted, setIsAllCompleted] = useState(false);
 
-    const onChangeTodo = (e: ChangeEvent<HTMLInputElement>, id: number) => {
-        const updatedTodos = todos.map((todo) => {
-            return todo?.id === id ? { ...todo, isСompleted: e.target.checked } : todo
-        }
+    const onChangeTodo = useCallback((e: ChangeEvent<HTMLInputElement>, id: number) => {
+        const updatedTodos = todos.map((todo) =>
+            todo?.id === id ? { ...todo, isСompleted: e.target.checked } : todo
         );
         setTodos(updatedTodos);
-    };
-
-    const handleAddTodo = () => {
-        if (newTodo.trim()) {
-            addTodo();
-        }
-    }
+    }, [todos]);
 
     const addTodo = () => {
         setTodoId(prev => prev += 1);
@@ -32,27 +25,36 @@ const TodoList: React.FC = () => {
         setNewTodo(''); // очищаем input после добавления
     }
 
+    const handleAddTodo = useCallback(() => {
+        if (newTodo.trim()) {
+            addTodo();
+        }
+    }, [newTodo, addTodo]);
+
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setNewTodo(e.target.value);
-    }
+    };
 
-    const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+
+    const handleKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && newTodo.trim()) {
             addTodo();
-            e.preventDefault(); // предотвращает отправку формы при нажатии Enter
+            e.preventDefault();
         }
-    }
+    }, [newTodo, addTodo]);
 
+    const filteredTodo = useMemo(() => {
+        return todos.filter((todo) => {
+            if (filter === 'completed') {
+                return todo.isСompleted;
+            } else if (filter === 'active') {
+                return !todo.isСompleted;
+            } else {
+                return true;
+            }
+        });
+    }, [todos, filter]);
 
-    const filteredTodo = todos.filter((todo) => {
-        if (filter === 'completed') {
-            return todo.isСompleted;
-        } else if (filter === 'active') {
-            return !todo.isСompleted;
-        } else {
-            return true;
-        }
-    });
 
     const countComplitedTodo = todos.filter((todo) => todo.isСompleted).length
 
@@ -70,12 +72,10 @@ const TodoList: React.FC = () => {
         });
     }
 
-    const removeTodo = (id: number) => {
-        setTodos((prev) => {
-            return prev.filter(todo => todo.id !== id)
-        })
+    const removeTodo = useCallback((id: number) => {
+        setTodos((prev) => prev.filter(todo => todo.id !== id));
+    }, []);
 
-    }
 
     useEffect(() => {
         const allCompleted = todos.length > 0 && todos.every(todo => todo.isСompleted);

@@ -1,4 +1,4 @@
-import { useState, KeyboardEvent } from "react";
+import React, { useState, KeyboardEvent } from "react";
 import { todoI } from "../interfaces/todoI";
 import styles from './UpdatedTodo.module.scss'
 
@@ -40,4 +40,4 @@ const UpdatedTodo: React.FC<todoI> = ({ todo, id, setTodos, setMutation }) => {
     );
 };
 
-export default UpdatedTodo;
+export default React.memo(UpdatedTodo);
